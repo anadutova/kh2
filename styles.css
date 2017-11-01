@@ -1,0 +1,63 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 60;
+}
+
+.menu {
+  background-color: #A82B31;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu__item {
+  padding: .5em;
+}
+
+.card {
+  margin: 30px 10vw;
+
+}
+
+.card__header {
+  height: 48;
+  background-color: #A82B31;
+  font-size: 24;
+  font-color: "white";
+}
+
+.card__body {
+  padding-left: 64px;
+  padding-right: 64px;
+  font-size: 20;
+}
+
+.card__button {
+  display: block;
+  height: 100px;
+  width: auto;
+  font-size: 20px;
+}
+
+.card__button-container {
+  height: 48px;
+}
+
+.card__button--red{
+  background-color: #A82B31;
+  height: 48px;
+}
+
+.card__button--green{
+  background-color: #468061
+}
+
+.card__button--blue{
+  background-color: #466180
+}
