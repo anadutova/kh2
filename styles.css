@@ -1,11 +1,28 @@
 body {
   font-family: 'Segoe UI', sans-serif;
+  font-size: 20px;
   margin: 0;
   padding: 0;
 }
 
+a:link {
+  text-decoration: none;
+}
+
 h1 {
-  font-size: 60;
+  font-size: 3em;
+  font-weight: normal;
+  margin:0;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: normal;
+  margin: 0 2em;
+}
+
+.header{
+  margin: 2em 8em;
 }
 
 .menu {
@@ -18,46 +35,46 @@ h1 {
 
 .menu__item {
   padding: .5em;
+  font-size: 24;
+  color: #fff;
 }
 
 .card {
-  margin: 30px 10vw;
-
+  margin: 0 auto 32px;
+  max-width: 50em;
 }
 
 .card__header {
   height: 48;
+  padding: .5em 3em;
   background-color: #A82B31;
   font-size: 24;
-  font-color: "white";
+  color: #fff;
 }
 
 .card__body {
-  padding-left: 64px;
-  padding-right: 64px;
+  padding: 0 3em;
   font-size: 20;
+  background-color: #f2f2f2;
+  overflow: auto;
 }
 
 .card__button {
-  display: block;
-  height: 100px;
-  width: auto;
-  font-size: 20px;
+  display: inline-block;
+  height: 48;
+  font-size: 20;
+  padding: .5em .8em;
+  color: #fff;
 }
 
-.card__button-container {
-  height: 48px;
-}
-
-.card__button--red{
+.card__button--color-red{
   background-color: #A82B31;
-  height: 48px;
 }
 
-.card__button--green{
+.card__button--color-green{
   background-color: #468061
 }
 
-.card__button--blue{
+.card__button--color-blue{
   background-color: #466180
 }
