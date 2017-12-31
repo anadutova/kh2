@@ -57,6 +57,11 @@ h2 {
   color: #fff;
 }
 
+.card-wrapper {
+  margin: 0 auto;
+  padding: .5em;
+}
+
 .card {
   margin: 0 auto 32px;
   max-width: 50em;
@@ -125,6 +130,17 @@ h2 {
   color: #A82B31;
 }
 
+.footer {
+  font-size: 0.8em;
+  background-color: #545454;
+  color: #f2f2f2;
+  padding: 1em 6em;
+}
+
+.footer > p {
+  margin:0;
+}
+
 @media (max-width: 767px) {
 	
 	
@@ -151,6 +167,13 @@ h2 {
 	
 	.header{
 		margin: 2em 0;
+}
+
+ .footer {
+  font-size: 0.8em;
+  background-color: #545454;
+  color: #f2f2f2;
+  padding: 1em 1em;
 }
 
 
