@@ -39,6 +39,10 @@ h2 {
   margin: 2em 5em;
 }
 
+.burger-check {
+  display: none;
+}
+
 .menu {
   background-color: #A82B31;
   display: flex;
@@ -148,6 +152,45 @@ h2 {
 	.header{
 		margin: 2em 0;
 }
+
+
 	
+}
+
+@media (max-width: 576px) {
+
+.menu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.burger-check:checked ~ .menu {
+  display: block;
+  max-height: initial;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.menu__item {
+  width: 100vw;
+  text-align: center;
+}
+
+.burger-bar {
+  padding: .5em;
+  font-size: 1.2em;
+  content: "";
+  color: #fff;
+  background-color: #A82B31;
+}
+
+.burger-bar__button {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-color: #fff8;
+}
 }
 
