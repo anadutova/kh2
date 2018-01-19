@@ -3,6 +3,7 @@
 <head>
 	<title>Kommunikációs hálózatok 2</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="script.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -10,18 +11,18 @@
 	<label for="burger-check" class="burger-bar__button"></label>
 	</div>
 	<input class="burger-check" id="burger-check" type="checkbox">
-	<div class="menu">
+	<nav class="menu">
 		<a href="#eloadas"><div class="menu__item">Előadásdiák</div></a>
 		<a href="#labor"><div class="menu__item">Labormérések</div></a>
 		<div class="menu__item">Követelmények</div>
 		<div class="menu__item">Eredmények</div>
 		<div class="menu__item">Egyéb, ajánlott irodalom</div>
-	</div>
-	<div class="header">
+	</nav>
+	<header class="header">
 		<h1>Kommunikációs hálózatok&nbsp2<h1>
 		<h2>VITMAB01</h2>
 		<h2>2018&nbsptavasz</h2>
-	</div>
+	</header>
 	<div class="card-wrapper">
 	<div id="eloadas" class="card">
 		<div class="card__header">
@@ -41,28 +42,7 @@
 					  <th class="table__header-cell">Megjegyzés</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr class="table__row">
-					  <td class="table__cell--text-align-center">12.24</td>
-					  <td><a class="table__link" href="#">Bemutatkozás, játékszabályok</a></td> 
-					  <td class="table__cell--text-align-center">Lorem</td>
-					  <td class="table__cell--text-align-center">NK</td>
-					  <td>Lorem ipsum dolor sit amet</td>
-					</tr>
-					<tr class="table__row">
-					  <td class="table__cell--text-align-center">12.24</td>
-					  <td><a class="table__link" href="#">Bemutatkozás, játékszabályok</a></td> 
-					  <td class="table__cell--text-align-center">Lorem</td>
-					  <td class="table__cell--text-align-center">NK</td>
-					  <td>Lorem ipsum dolor sit amet</td>
-					</tr>
-					<tr class="table__row">
-					  <td class="table__cell--text-align-center">12.24</td>
-					  <td><a class="table__link" href="#">Bemutatkozás, játékszabályok</a></td> 
-					  <td class="table__cell--text-align-center">Lorem</td>
-					  <td class="table__cell--text-align-center">NK</td>
-					  <td>Lorem ipsum dolor sit amet</td>
-					</tr>
+				<tbody id="table-body">
 					<tr class="table__row">
 					  <td class="table__cell--text-align-center">12.24</td>
 					  <td><a class="table__link" href="#">Bemutatkozás, játékszabályok</a></td> 
@@ -93,5 +73,4 @@
 <p>Nemeth.Krisztian(kukac)tmit.bme.hu</p>
 </footer>
 </body>
-
 </html>
