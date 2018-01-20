@@ -45,6 +45,22 @@ function onReady(){
 
         table.appendChild(row);
     }
+    createFoldedTable();
 }
 
 ready(onReady);
+
+function createFoldedTable(){
+    if (window.matchMedia("(max-width: 576px)").matches) {
+        var tableHeader = document.querySelector(".table__header");
+        tableHeader.insertBefore(document.createElement("th"), tableHeader.firstChild);
+        var rows = document.querySelectorAll("tbody > tr");
+        var cell = document.createElement("td");
+        cell.textContent = "\u25b6";
+        for (row of rows)
+            {
+                row.insertBefore(cell.cloneNode(true), row.firstChild);
+                console.log("row");
+            }
+    }
+}
