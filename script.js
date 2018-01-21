@@ -23,10 +23,14 @@ function onReady(){
         var row = document.createElement("tr");
         row.setAttribute("class", "table__row");
 
+        let cell = document.createElement("td");
+        cell.textContent = "\u25b6";
+        row.appendChild(cell);
+
         for(let i = 0; i < 5; i++) {
-            var cell = document.createElement("td");
+            let cell = document.createElement("td");
             if (i == 0 || i == 2 || i == 3) cell.setAttribute("class", "table__cell--text-align-center");
-            var cellText;
+            let cellText;
             switch (i) {
                 case 0: cellText = document.createTextNode(lecture.date);
                 break;

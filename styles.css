@@ -12,6 +12,7 @@ body {
 .chevron-right{
   fill: #fff;
   height:0.6em;
+  width:0.6em;
   margin-left: 1.5em;
 }
 
@@ -91,7 +92,7 @@ h2 {
   font-size: 1em;
   padding: .5em .8em;
   color: #fff;
-  margin: .2em;
+  margin: .2em .1em;
 }
 
 .card__button--color-red{
