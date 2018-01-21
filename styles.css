@@ -9,6 +9,12 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+.chevron-right{
+  fill: #fff;
+  height:0.6em;
+  margin-left: 1.5em;
+}
+
 a:link {
   text-decoration: none;
 }
