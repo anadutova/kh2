@@ -9,11 +9,20 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
-.hidden {
+ul {
+  list-style-type: square;
+  }
+
+
+.table__cell--filler {
   visibility: hidden;
 }
 
-.chevron-right{
+.table__cell--xs-only {
+  display: none;
+}
+
+.chevron-right {
   fill: #fff;
   height:0.6em;
   width:0.6em;
@@ -34,6 +43,10 @@ h2 {
   font-size: 1.8em;
   font-weight: normal;
   margin: 0 2em;
+}
+
+.paragraph--emphasised {
+  font-weight: 600;
 }
 
 
@@ -225,6 +238,8 @@ h2 {
 
 .table__cell--flexible {
   flex: 1 0 60%;
+  text-align: left;
+  white-space: pre-wrap;
 }
 
 .table__flex-break {
@@ -234,7 +249,7 @@ h2 {
 
 .table_cell--data-lecturer::before{
   /*non-breaking space*/
-  content:"Előadó:\00a0"
+  content:"Előadó:\00a0";
 }
 
 .table_cell--data-comment::before{
@@ -281,9 +296,19 @@ h2 {
   background-color: #fff8;
 }
 
-.table__header-cell:nth-child(4), .table__header-cell:nth-child(5) {
+.table__cell--except-xs {
   display:none;
 }
+
+.table__cell--xs-only {
+  display: block;
+}
+
+.table__cell--filler {
+  display: none;
+}
+
+
 
 }
 
@@ -295,3 +320,5 @@ h2 {
   padding: .5em;
 }
 
+.table__cell--except-xs {
+  display: table-cell;
