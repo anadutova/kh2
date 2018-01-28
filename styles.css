@@ -9,6 +9,10 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .chevron-right{
   fill: #fff;
   height:0.6em;
@@ -115,6 +119,12 @@ h2 {
   width: 100%;
 }
 
+
+
+.table__flex-break {
+  display: none;
+}
+
 .table__header{
   background-color: #e6e6e6;
   font-weight: normal;
@@ -189,6 +199,54 @@ h2 {
 
 @media (max-width: 576px) {
 
+.table, .table__header-wrapper, .table__header, .table__header-cell,
+.table__body, .table__row, .table__cell--text-align-center,
+.table__cell--flexible, .table__cell--inflexible {
+  display: block;
+  box-sizing: border-box;
+}
+
+.table {
+  width: initial;
+}
+
+.table__header, .table__row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.table__cell {
+}
+
+.table__cell--inflexible {
+  flex: 0 0;
+  padding: 0 .3em;
+}
+
+.table__cell--flexible {
+  flex: 1 0 60%;
+}
+
+.table__flex-break {
+  display: block;
+  flex: 0 0 100%;
+}
+
+.table_cell--data-lecturer::before{
+  /*non-breaking space*/
+  content:"Előadó:\00a0"
+}
+
+.table_cell--data-comment::before{
+  content:"Megjegyzés:\A";
+  white-space: pre;
+}
+
+#a, #b {
+  display: none;
+}
+
+
 .menu {
   overflow: hidden;
   max-height: 0;
@@ -227,10 +285,13 @@ h2 {
   display:none;
 }
 
-td:nth-child(4), td:nth-child(5){
-  display:table-row;
-  width:100%;
 }
 
+.undisplayed {
+  display: none;
+}
+
+.table__cell {
+  padding: .5em;
 }
 

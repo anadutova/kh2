@@ -24,12 +24,25 @@ function onReady(){
         row.setAttribute("class", "table__row");
 
         let cell = document.createElement("td");
+        //unicode for BLACK RIGHT-POINTING TRIANGLE
         cell.textContent = "\u25b6";
+        cell.classList.add("class", "table__cell--text-align-center", "table__cell")
+        cell.addEventListener("click", function(event){
+            var row = event.target.parentElement;
+            var cells = row.querySelectorAll(".js-collapsibleCell");
+            for (cell of cells){
+                cell.classList.toggle("undisplayed");
+            }
+        })
         row.appendChild(cell);
 
         for(let i = 0; i < 5; i++) {
             let cell = document.createElement("td");
-            if (i == 0 || i == 2 || i == 3) cell.setAttribute("class", "table__cell--text-align-center");
+            if (i == 0 || i == 2 || i == 2) cell.setAttribute("class", "table__cell--text-align-center  table__cell--inflexible");
+            else cell.setAttribute("class", "table__cell--flexible");
+            if (i == 3) cell.classList.add("table_cell--data-lecturer", "js-collapsibleCell");
+            if (i == 4) cell.classList.add("table_cell--data-comment", "js-collapsibleCell");
+            cell.classList.add("table__cell");
             let cellText;
             switch (i) {
                 case 0: cellText = document.createTextNode(lecture.date);
@@ -45,16 +58,21 @@ function onReady(){
             }
             cell.appendChild(cellText);
             row.appendChild(cell);
+
+            if (i == 2){
+                let flexBreak = document.createElement("td");
+                flexBreak.classList.add("table__flex-break");
+                row.appendChild(flexBreak);
+            }
         }
 
         table.appendChild(row);
     }
-    createFoldedTable();
 }
 
 ready(onReady);
 
-function createFoldedTable(){
+function createCollapsibleTable(){
     if (window.matchMedia("(max-width: 576px)").matches) {
         var tableHeader = document.querySelector(".table__header");
         tableHeader.insertBefore(document.createElement("th"), tableHeader.firstChild);

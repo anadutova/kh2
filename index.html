@@ -1,79 +1,103 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Kommunikációs hálózatok 2</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script src="script.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 	<div class="burger-bar">
-	<label for="burger-check" class="burger-bar__button"></label>
+		<label for="burger-check" class="burger-bar__button"></label>
 	</div>
 	<input class="burger-check" id="burger-check" type="checkbox">
 	<nav class="menu">
-		<a href="#eloadas"><div class="menu__item">Előadásdiák</div></a>
-		<a href="#labor"><div class="menu__item">Labormérések</div></a>
+		<a href="#eloadas">
+			<div class="menu__item">Előadásdiák</div>
+		</a>
+		<a href="#labor">
+			<div class="menu__item">Labormérések</div>
+		</a>
 		<div class="menu__item">Követelmények</div>
 		<div class="menu__item">Eredmények</div>
 		<div class="menu__item">Egyéb, ajánlott irodalom</div>
 	</nav>
 	<header class="header">
-		<h1>Kommunikációs hálózatok&nbsp2<h1>
-		<h2>VITMAB01</h2>
-		<h2>2018&nbsptavasz</h2>
+		<h1>Kommunikációs hálózatok&nbsp2
+			<h1>
+				<h2>VITMAB01</h2>
+				<h2>2018&nbsptavasz</h2>
 	</header>
 	<div class="card-wrapper">
-	<article id="eloadas" class="card">
-		<header class="card__header">
-			Előadásdiák
-	</header>
-		<section class="card__body">
-			<p class="paragraph">Az előadásfóliák letöltése nem helyettesíti az előadásra járást és a jegyzetelést.
-			A fóliák önmagukban nem feltétlenül alkalmasak a tanulásra, pusztán az előadások követésének és a jegyzetelésnek a megkönnyítésére szolgálnak.</p>
-			
-			<table class="table">
-				<thead>
-					<tr class="table__header">
-						<th class="table__header-cell"></th>
-					  <th class="table__header-cell">Dátum</th>
-					  <th class="table__header-cell">Téma</th> 
-					  <th class="table__header-cell">Letöltés</th>
-					  <th class="table__header-cell">Előadó</th>
-					  <th class="table__header-cell">Megjegyzés</th>
-					</tr>
-				</thead>
-				<tbody id="table-body">
-					<tr class="table__row">
-							<td class="table__cell--text-align-center">&#9654</td>
-					  <td class="table__cell--text-align-center">12.24</td>
-					  <td><a class="table__link" href="#">Bemutatkozás, játékszabályok</a></td> 
-					  <td class="table__cell--text-align-center">Lorem</td>
-					  <td class="table__cell--text-align-center">NK</td>
-					  <td>Lorem ipsum dolor sit amet</td>
-					</tr>
-					</tbody>
-				  </table>
+		<article id="eloadas" class="card">
+			<header class="card__header">
+				Előadásdiák
+			</header>
+			<section class="card__body">
+				<p class="paragraph">Az előadásfóliák letöltése nem helyettesíti az előadásra járást és a jegyzetelést. A fóliák önmagukban nem feltétlenül
+					alkalmasak a tanulásra, pusztán az előadások követésének és a jegyzetelésnek a megkönnyítésére szolgálnak.</p>
 
-				</section>
-			</article>
-	<article id="labor" class="card">
-		<header class="card__header">
-			Labormérések
-		</header>
-		<section class="card__body">
-			<p>A laborok elején begró van.</p>
-			<p>A mérés végén kapott jegybe belszámít a beugrón elért pontszám, a laboron végzett munka és a mérési jegyzőkönyv minősége.</p>
-			<a href="#" class="card__button card__button--color-red">Mérési segédletek<svg class="chevron-right"><use xlink:href="chevron-right-02.svg#chevron-right" /></svg></a>
-			<a href="#" class="card__button card__button--color-blue">Jelentkezés<svg class="chevron-right"><use xlink:href="chevron-right-02.svg#chevron-right" /></svg></a>
-			<a href="#" class="card__button card__button--color-green">Eredmények<svg class="chevron-right"><use xlink:href="chevron-right-02.svg#chevron-right" /></svg></a>
-		</section>
-	</article>
-</div>
-<footer class="footer">
-	<p>Utolsó frissítés: 2017. február 27. hétfő</p>
-<p>Minden jog fenntartva. Az itt található anyagokat a tárgy hallgatói letölthetik és tanulásra felhasználhatják. Minden más felhasználáshoz a szerzők engedélye szükséges.</p>
-<p>Nemeth.Krisztian(kukac)tmit.bme.hu</p>
-</footer>
+				<table class="table">
+					<thead class="table__header-wrapper">
+						<tr class="table__header" id="a">
+							<th class="table__header-cell hidden"></th>
+							<th class="table__header-cell">Dátum</th>
+							<th class="table__header-cell">Téma</th>
+							<th class="table__header-cell">Letöltés</th>
+							<th class="table__header-cell">Előadó</th>
+							<th class="table__header-cell" id="b">Megjegyzés</th>
+						</tr>
+					</thead>
+					<tbody class="table__body" id="table-body">
+						<tr class="table__row">
+							<td class="table__cell--text-align-center  table__cell--inflexible js-collapseButton">&#9654</td>
+							<td class="table__cell--text-align-center  table__cell--inflexible">12.24</td>
+							<td class="table__cell--flexible">
+								<a class="table__link" href="#">Bemutatkozás, játékszabályok</a>
+							</td>
+							<td class="table__cell--text-align-center  table__cell--inflexible">Lorem</td>
+							<td class="table__flex-break"></td>
+							<td class="table__cell--text-align-center  table__cell--inflexible table_cell--data-lecturer js-collapsibleCell">NK</td>
+							<td class="table__cell--flexible table_cell--data-comment js-collapsibleCell undisplayed">Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</section>
+		</article>
+		<article id="labor" class="card">
+			<header class="card__header">
+				Labormérések
+			</header>
+			<section class="card__body">
+				<p>A laborok elején begró van.</p>
+				<p>A mérés végén kapott jegybe belszámít a beugrón elért pontszám, a laboron végzett munka és a mérési jegyzőkönyv minősége.</p>
+				<a href="#" class="card__button card__button--color-red">Mérési segédletek
+					<svg class="chevron-right">
+						<use xlink:href="chevron-right-02.svg#chevron-right" />
+					</svg>
+				</a>
+				<a href="#" class="card__button card__button--color-blue">Jelentkezés
+					<svg class="chevron-right">
+						<use xlink:href="chevron-right-02.svg#chevron-right" />
+					</svg>
+				</a>
+				<a href="#" class="card__button card__button--color-green">Eredmények
+					<svg class="chevron-right">
+						<use xlink:href="chevron-right-02.svg#chevron-right" />
+					</svg>
+				</a>
+			</section>
+		</article>
+	</div>
+	<footer class="footer">
+		<p>Utolsó frissítés: 2017. február 27. hétfő</p>
+		<p>Minden jog fenntartva. Az itt található anyagokat a tárgy hallgatói letölthetik és tanulásra felhasználhatják. Minden más
+			felhasználáshoz a szerzők engedélye szükséges.</p>
+		<p>Nemeth.Krisztian(kukac)tmit.bme.hu</p>
+	</footer>
 </body>
+
 </html>
