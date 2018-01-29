@@ -2,7 +2,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   font-size: 20px;
   margin: 0;
-  padding: 0;
+  padding: 2.2em 0 0 0;
   text-size-adjust: 100%; 
     -ms-text-size-adjust: 100%; 
     -moz-text-size-adjust: 100%; 
@@ -24,9 +24,11 @@ ul {
 
 .chevron-right {
   fill: #fff;
-  height:0.6em;
-  width:0.6em;
+  height:1.1em;
+  width:1.1em;
   margin-left: 1.5em;
+  margin-bottom: -.25em;
+  margin-right: -.3em;
 }
 
 a:link {
@@ -68,16 +70,47 @@ h2 {
 
 .menu {
   background-color: #A82B31;
+  color: #fff;
+  position: fixed;
+  top:0;
+  width: 100vw;
+  box-shadow: 0 0 .5em 0.1em rgba(0, 0, 0, 0.3);
+}
+
+.menu__bar {
+  display: none;
+}
+
+.menu__items {
   display: flex;
+  list-style: none;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 .menu__item {
+  display: block;
   padding: .5em;
   font-size: 1.2em;
-  color: #fff;
+  color: inherit;
+}
+
+.menu__button{
+  background-color: transparent;
+  border: none;
+  display: inline-block;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.menu__menu-icon {
+  fill: #fff;
+  width: 2em;
+  height: 2em;
+  display: block;
 }
 
 .card-wrapper {
@@ -110,6 +143,7 @@ h2 {
   padding: .5em .8em;
   color: #fff;
   margin: .2em .1em;
+  white-space: nowrap;
 }
 
 .card__button--color-red{
@@ -212,6 +246,10 @@ h2 {
 
 @media (max-width: 576px) {
 
+  body{
+    padding:0;
+  }
+
 .table, .table__header-wrapper, .table__header, .table__header-cell,
 .table__body, .table__row, .table__cell--text-align-center,
 .table__cell--flexible, .table__cell--inflexible {
@@ -261,17 +299,13 @@ h2 {
   display: none;
 }
 
-
 .menu {
-  overflow: hidden;
-  max-height: 0;
-  -webkit-transition: max-height 0.5s ease-in-out;
-  transition: max-height 0.5s ease-in-out;
+  position: initial;
+  box-shadow: none;
 }
-
-.burger-check:checked ~ .menu {
-  display: block;
-  max-height: initial;
+.menu__items {
+  display: none;
+  overflow: hidden;
   -webkit-transition: max-height 0.5s ease-in-out;
   transition: max-height 0.5s ease-in-out;
 }
@@ -281,19 +315,12 @@ h2 {
   text-align: center;
 }
 
-.burger-bar {
-  padding: .5em;
+.menu__bar {
+  display: block;
+  padding: .4em;
   font-size: 1.2em;
-  content: "";
   color: #fff;
   background-color: #A82B31;
-}
-
-.burger-bar__button {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  background-color: #fff8;
 }
 
 .table__cell--except-xs {

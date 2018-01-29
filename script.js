@@ -7,6 +7,8 @@ function ready(fn) {
   }
 
 function onReady(){
+    initMenuButtonClickEvent();
+
     var lectures = new Array(5).fill(
         {
             date: "12.25",
@@ -80,7 +82,7 @@ function onReady(){
 
 ready(onReady);
 
-function createCollapsibleTable(){
+function initCollapsibleTable(){
     if (window.matchMedia("(max-width: 576px)").matches) {
         var tableHeader = document.querySelector(".table__header");
         tableHeader.insertBefore(document.createElement("th"), tableHeader.firstChild);
@@ -93,4 +95,19 @@ function createCollapsibleTable(){
                 console.log("row");
             }
     }
+}
+
+function initMenuButtonClickEvent(){
+    var button = document.querySelector(".js-menuButton");
+    button.addEventListener("click", function(event){
+     menu = document.querySelector(".menu__items");
+     menu.style.display = !menu.style.display || menu.style.display === 'none' ? 'flex' : 'none';
+     console.log("Menu button clicked")
+    })
+
+    window.matchMedia("(min-width: 577px)").addListener(() => {
+        menu = document.querySelector(".menu__items");
+        menu.removeAttribute("style");
+    });
+
 }

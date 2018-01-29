@@ -9,20 +9,32 @@
 </head>
 
 <body>
-	<div class="burger-bar">
-		<label for="burger-check" class="burger-bar__button"></label>
-	</div>
-	<input class="burger-check" id="burger-check" type="checkbox">
 	<nav class="menu">
-		<a href="#eloadas">
-			<div class="menu__item">Előadásdiák</div>
-		</a>
-		<a href="#labor">
-			<div class="menu__item">Labormérések</div>
-		</a>
-		<div class="menu__item">Követelmények</div>
-		<div class="menu__item">Eredmények</div>
-		<div class="menu__item">Egyéb, ajánlott irodalom</div>
+		<div class="menu__bar">
+			<button role="switch" type="button" class="menu__button js-menuButton">
+				<svg class="menu__menu-icon">
+					<use xlink:href="icons.svg#ic_menu_white_24px" />
+				</svg>
+			</button>
+		</div>
+		<ul class="menu__items">
+			<li>
+				<a href="#eloadas" class="menu__item">
+					Előadásdiák</a>
+			</li>
+			<li>
+				<a href="#labor" class="menu__item">
+					Labormérések</a>
+			</li>
+			<li>
+				<a href="#kovetelmeny" class="menu__item">
+					Követelmények</a>
+			</li>
+			<li>
+				<a href="#eredmeny" class="menu__item">
+					Eredmények</a>
+			</li>
+		</ul>
 	</nav>
 	<header class="header">
 		<h1>Kommunikációs hálózatok&nbsp2
@@ -42,7 +54,7 @@
 				<table class="table">
 					<thead class="table__header-wrapper">
 						<tr class="table__header" id="a">
-							
+
 							<th class="table__header-cell">Dátum</th>
 							<th class="table__header-cell">Téma</th>
 							<th class="table__header-cell">Letöltés</th>
@@ -52,7 +64,7 @@
 					</thead>
 					<tbody class="table__body" id="table-body">
 						<tr class="table__row">
-						<!--	<td class="table__cell--text-align-center table__cell--hidden table__cell--inflexible js-collapseButton">&#9654</td> -->
+							<!--	<td class="table__cell--text-align-center table__cell--hidden table__cell--inflexible js-collapseButton">&#9654</td> -->
 							<td class="table__cell--text-align-center  table__cell--inflexible">12.24</td>
 							<td class="table__cell--flexible">
 								<a class="table__link" href="#">Bemutatkozás, játékszabályok Bemutatkozás, játékszabályok Bemutatkozás, játékszabályok</a>
@@ -83,55 +95,55 @@
 				<p>Mérések helye: IB.141, IB.142.</p>
 				<a href="#" class="card__button card__button--color-red">Mérési segédletek
 					<svg class="chevron-right">
-						<use xlink:href="chevron-right-02.svg#chevron-right" />
+						<use xlink:href="icons.svg#ic_chevron_right_white_24px" />
 					</svg>
 				</a>
 				<a href="#" class="card__button card__button--color-blue">Jelentkezés
 					<svg class="chevron-right">
-						<use xlink:href="chevron-right-02.svg#chevron-right" />
+						<use xlink:href="icons.svg#ic_chevron_right_white_24px" />
 					</svg>
 				</a>
 				<a href="#" class="card__button card__button--color-green">Eredmények
 					<svg class="chevron-right">
-						<use xlink:href="chevron-right-02.svg#chevron-right" />
+						<use xlink:href="icons.svg#ic_chevron_right_white_24px" />
 					</svg>
 				</a>
 			</section>
 		</article>
 		<article id="kovetelmeny" class="card">
-				<header class="card__header">
-					Követelmények
-				</header>
-				<section class="card__body">
-					<ul>
-						<li>Szorgalmi időszakban:
-								<ul>
-							<li>
-								40%-os ZH 
-							</li>
-							<li>
-									Összes labor teljesítése legalább elégséges szinten
-								</li>
-									</ul>
-						</li>
-						
-						<li>Félévvégi jegy számítása: 0.85 * vizsga jegye + 0.1 ZH jegye + 0.05 * mérések átlaga</li>
-					</ul>
-				</section>
-			</article>
-			<article id="ajanlott" class="card">
-					<header class="card__header">
-						Ajánlott jegyzet, szakirodalom
-					</header>
-					<section class="card__body">
-						<p class="paragraph--emphasised">Elsősorban a saját órai jegyzet ajánlott, amelyhez az e lapról letölthető fóliák hivatottak segítséget nyújtani</p>
+			<header class="card__header">
+				Követelmények
+			</header>
+			<section class="card__body">
+				<ul>
+					<li>Szorgalmi időszakban:
 						<ul>
-							<li>A Műegyetem Mátrixa – egy kis motiváció a tanulásra, a'la Morpheus és Németh K 
+							<li>
+								40%-os ZH
 							</li>
-							<li>Az említett kérdőív a hallgatói munkavállalásról itt található.</li>
+							<li>
+								Összes labor teljesítése legalább elégséges szinten
+							</li>
 						</ul>
-					</section>
-				</article>
+					</li>
+
+					<li>Félévvégi jegy számítása: 0.85 * vizsga jegye + 0.1 ZH jegye + 0.05 * mérések átlaga</li>
+				</ul>
+			</section>
+		</article>
+		<article id="ajanlott" class="card">
+			<header class="card__header">
+				Ajánlott jegyzet, szakirodalom
+			</header>
+			<section class="card__body">
+				<p class="paragraph--emphasised">Elsősorban a saját órai jegyzet ajánlott, amelyhez az e lapról letölthető fóliák hivatottak segítséget nyújtani</p>
+				<ul>
+					<li>A Műegyetem Mátrixa – egy kis motiváció a tanulásra, a'la Morpheus és Németh K
+					</li>
+					<li>Az említett kérdőív a hallgatói munkavállalásról itt található.</li>
+				</ul>
+			</section>
+		</article>
 	</div>
 	<footer class="footer">
 		<p>Utolsó frissítés: 2017. február 27. hétfő</p>
