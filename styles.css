@@ -2,11 +2,19 @@ body {
   font-family: 'Segoe UI', sans-serif;
   font-size: 20px;
   margin: 0;
-  padding: 2.2em 0 0 0;
+  padding-top: 2.2em;
   text-size-adjust: 100%; 
     -ms-text-size-adjust: 100%; 
     -moz-text-size-adjust: 100%; 
     -webkit-text-size-adjust: 100%;
+}
+
+.schdesign-logo {
+  display: block;
+  float:right;
+  height:5em;
+  width: 7em;
+  margin-left: 2em;
 }
 
 ul {
@@ -113,6 +121,14 @@ h2 {
   display: block;
 }
 
+.download-icon {
+  fill: #000;
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  margin-bottom:-.5em;
+}
+
 .card-wrapper {
   margin: 0 auto;
   padding: .5em;
@@ -195,11 +211,13 @@ h2 {
 }
 
 .footer {
-  font-size: 0.8em;
+  font-size: .8em;
   background-color: #545454;
   color: #f2f2f2;
   padding: 1em 6em;
 }
+
+
 
 .footer > p {
   margin:0;
@@ -253,7 +271,7 @@ h2 {
 .table, .table__header-wrapper, .table__header, .table__header-cell,
 .table__body, .table__row, .table__cell--text-align-center,
 .table__cell--flexible, .table__cell--inflexible {
-  display: block;
+  /*display: block;*/
   box-sizing: border-box;
 }
 
@@ -277,12 +295,13 @@ h2 {
 .table__cell--flexible {
   flex: 1 0 60%;
   text-align: left;
-  white-space: pre-wrap;
+  /*white-space: pre-wrap;*/
 }
 
 .table__flex-break {
   display: block;
   flex: 0 0 100%;
+  padding:0;
 }
 
 .table_cell--data-lecturer::before{
@@ -292,7 +311,7 @@ h2 {
 
 .table_cell--data-comment::before{
   content:"Megjegyzés:\A";
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 #a, #b {
@@ -349,3 +368,4 @@ h2 {
 
 .table__cell--except-xs {
   display: table-cell;
+}

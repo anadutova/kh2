@@ -21,10 +21,18 @@ function onReady(){
 
     lectures.push( {
         date: "12.25",
+            topic: "Bemutatkozás, játékszabályok Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet ",
+            address:  null,
+            lecturer: "NK",
+            comment:  "Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet" 
+    });
+
+    lectures.push( {
+        date: "12.25",
             topic: "Bemutatkozás, játékszabályok",
             address:  null,
             lecturer: "NK",
-            comment:  "Lorem ipsum dolor sit amet \u25b6 \n Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet" 
+            comment:  "Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet" 
     });
 
     var table = document.getElementById("table-body");
@@ -36,7 +44,7 @@ function onReady(){
         let cell = document.createElement("td");
         //unicode for BLACK RIGHT-POINTING TRIANGLE
         cell.textContent = "\u25b6";
-        cell.classList.add("class", "table__cell--text-align-center", "table__cell--xs-only")
+        cell.classList.add("table__cell--text-align-center", "table__cell--xs-only", "table__cell--inflexible", "table__cell");
         cell.addEventListener("click", function(event){
             var row = event.target.parentElement;
             var cells = row.querySelectorAll(".js-collapsibleCell");
@@ -59,7 +67,23 @@ function onReady(){
                 break;
                 case 1: cellText = document.createTextNode(lecture.topic);
                 break;
-                case 2: cellText = document.createTextNode(lecture.address);
+                case 2: {
+                    var a = document.createElement("a");
+                    a.classList.add("download-button");
+                    a.setAttributeNode(document.createAttribute("download"));
+                    a.setAttribute("href", lecture.address)
+
+                    var svg = document.createElementNS('http://www.w3.org/2000/svg', "svg");
+                    svg.classList.add("download-icon");
+
+                    var use = document.createElementNS('http://www.w3.org/2000/svg', "use");
+                    use.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_file_download_white_24px");
+
+                    svg.appendChild(use);
+                    a.appendChild(svg);
+
+                    cellText = a;
+                }
                 break;
                 case 3: cellText = document.createTextNode(lecture.lecturer);
                 break;
