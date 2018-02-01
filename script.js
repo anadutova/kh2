@@ -43,14 +43,34 @@ function onReady(){
 
         let cell = document.createElement("td");
         //unicode for BLACK RIGHT-POINTING TRIANGLE
-        cell.textContent = "\u25b6";
+        //cell.textContent = "\u25b6";
+
+        var button = document.createElement("button");
+        button.classList.add("expand-button");
+        button.setAttribute("role", "switch");
+
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', "svg");
+        svg.classList.add("expand-icon");
+
+        var use = document.createElementNS('http://www.w3.org/2000/svg', "use");
+        use.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_add_white_24px");
+
+        svg.appendChild(use);
+        button.appendChild(svg);
+        cell.appendChild(button);
+
+
         cell.classList.add("table__cell--text-align-center", "table__cell--xs-only", "table__cell--inflexible", "table__cell");
-        cell.addEventListener("click", function(event){
-            var row = event.target.parentElement;
+        button.addEventListener("click", function(event){
+            var button = event.target;
+            var row = button.parentElement.parentElement;
             var cells = row.querySelectorAll(".js-collapsibleCell");
             for (cell of cells){
-                cell.classList.toggle("undisplayed");
+                if (!cell.classList.toggle("table__cell--except-xs"))
+                button.firstChild.firstChild.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_remove_white_24px");
+                else button.firstChild.firstChild.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_add_white_24px");
             }
+
         })
         row.appendChild(cell);
 
@@ -58,8 +78,8 @@ function onReady(){
             let cell = document.createElement("td");
             if (i == 0 || i == 2 || i == 2) cell.setAttribute("class", "table__cell--text-align-center  table__cell--inflexible");
             else cell.setAttribute("class", "table__cell--flexible");
-            if (i == 3) cell.classList.add("table_cell--data-lecturer", "js-collapsibleCell", "table__cell--text-align-center");
-            if (i == 4) cell.classList.add("table_cell--data-comment", "js-collapsibleCell");
+            if (i == 3) cell.classList.add("table_cell--data-lecturer", "js-collapsibleCell", "table__cell--text-align-center", "table__cell--except-xs");
+            if (i == 4) cell.classList.add("table_cell--data-comment", "js-collapsibleCell", "table__cell--except-xs");
             cell.classList.add("table__cell");
             let cellText;
             switch (i) {
