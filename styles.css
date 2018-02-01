@@ -68,6 +68,14 @@ h2 {
   font-weight: 600;
 }
 
+.card:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -3em;
+  height: 3em;
+  visibility: hidden; 
+}
+
 
 
 @media (max-width: 991px) { 
@@ -100,6 +108,7 @@ h2 {
 
 .menu__items {
   display: flex;
+  flex-wrap: nowrap;
   list-style: none;
   justify-content: space-around;
   align-items: center;
@@ -109,6 +118,7 @@ h2 {
 }
 
 .menu__item {
+  flex: 1 0 auto;
   display: block;
   padding: .5em;
   font-size: 1.2em;
@@ -254,6 +264,10 @@ h2 {
 }
 
 @media (max-width: 767px) {
+
+  body {
+    padding-top: 5em;
+  }
 	
 	
 	.header{
@@ -267,7 +281,15 @@ h2 {
 	h2 {
 		font-size: 1.2em;
 		margin: 0 0;
-	}
+  }
+
+  .card:before { 
+    display: block; 
+    content: " "; 
+    margin-top: -6em;
+    height: 6em;
+    visibility: hidden; 
+  }
 	
 	.card__header {
 		padding: .5em 1em;
