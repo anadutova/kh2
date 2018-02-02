@@ -32,7 +32,7 @@ function onReady(){
             topic: "Bemutatkozás, játékszabályok",
             address:  null,
             lecturer: "NK",
-            comment:  "Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet" 
+            comment:  "Lorem ipsum dolor sit amet\nLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet" 
     });
 
     var table = document.getElementById("table-body");
@@ -42,8 +42,6 @@ function onReady(){
         row.setAttribute("class", "table__row");
 
         let cell = document.createElement("td");
-        //unicode for BLACK RIGHT-POINTING TRIANGLE
-        //cell.textContent = "\u25b6";
 
         var button = document.createElement("button");
         button.classList.add("expand-button");
@@ -85,7 +83,14 @@ function onReady(){
             switch (i) {
                 case 0: cellText = document.createTextNode(lecture.date);
                 break;
-                case 1: cellText = document.createTextNode(lecture.topic);
+                case 1: {
+                    cellText = document.createTextNode(lecture.topic);
+                    var a = document.createElement("a");
+                    a.classList.add("link");
+                    a.textContent = lecture.topic;
+                    a.href = lecture.address;
+                    cellText = a;
+                }
                 break;
                 case 2: {
                     var a = document.createElement("a");
@@ -122,6 +127,8 @@ function onReady(){
 
         table.appendChild(row);
     }
+
+    updateLastModified();
 }
 
 ready(onReady);
@@ -154,4 +161,16 @@ function initMenuButtonClickEvent(){
         menu.removeAttribute("style");
     });
 
+}
+
+function updateLastModified(){
+    
+    var req = new XMLHttpRequest();
+    req.responseType = "document";
+    req.onload = function(){
+        var time = document.querySelector("#js-lastModified");
+        time.textContent = this.getResponseHeader("Last-Modified");
+    };
+    req.open('HEAD', 'script.js');
+    req.send();
 }

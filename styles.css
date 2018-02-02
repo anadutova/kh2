@@ -11,14 +11,20 @@ body {
 
 .schdesign-ack {
   display: block;
-  margin: 2em auto 0;
+  margin: 2em auto;
+}
+
+.footer {
+  overflow: hidden;
 }
 
 .schdesign-logo {
-  display: block;
+  display: inline-block;
   height:5em;
   width: 7em;
-  margin: -1em auto -1em;
+  /*margin: -1em auto -1em;*/
+  margin-bottom: -2.3em;
+  margin-left: .5em;
 }
 
 .schdesign-ack_text {
@@ -27,8 +33,10 @@ body {
 }
 
 ul {
-  list-style-type: square;
+  list-style-type: "★";
+  padding-left: 1.2em;
   }
+
 
 
 .table__cell--filler {
@@ -48,8 +56,9 @@ ul {
   margin-right: -.3em;
 }
 
-a:link {
+a {
   text-decoration: none;
+  color: inherit;
 }
 
 h1 {
@@ -219,6 +228,13 @@ h2 {
   width: 100%;
 }
 
+.table_cell--data-comment{
+  white-space: pre-wrap;
+}
+
+.link{
+  color: #A82B31;
+}
 
 
 .table__flex-break {
@@ -369,6 +385,8 @@ h2 {
   content:"Megjegyzés:\A";
   white-space: pre-wrap;
 }
+
+
 
 #a, #b {
   display: none;
