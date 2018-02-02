@@ -365,7 +365,7 @@ h2 {
 }
 
 .table__cell--flexible {
-  flex: 1 0 60%;
+  flex: 1 2 51%;
   text-align: left;
   /*white-space: pre-wrap;*/
 }
