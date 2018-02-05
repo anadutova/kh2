@@ -22,7 +22,6 @@ body {
   display: inline-block;
   height:5em;
   width: 7em;
-  /*margin: -1em auto -1em;*/
   margin-bottom: -2.3em;
   margin-left: .5em;
 }
@@ -107,7 +106,7 @@ h2 {
   color: #fff;
   position: fixed;
   top:0;
-  width: 100vw;
+  width: 100%;
   box-shadow: 0 0 .5em 0.1em rgba(0, 0, 0, 0.3);
 }
 
@@ -228,7 +227,15 @@ h2 {
   width: 100%;
 }
 
+.table__cell--no-wrap {
+  white-space: nowrap;
+}
+
 .table_cell--data-comment{
+  white-space: pre-wrap;
+}
+
+.table_cell--data-lecturer{
   white-space: pre-wrap;
 }
 
@@ -343,12 +350,7 @@ h2 {
 .table, .table__header-wrapper, .table__header, .table__header-cell,
 .table__body, .table__row, .table__cell--text-align-center,
 .table__cell--flexible, .table__cell--inflexible {
-  /*display: block;*/
   box-sizing: border-box;
-}
-
-.table {
-  width: initial;
 }
 
 .table__header, .table__row {
@@ -370,6 +372,11 @@ h2 {
   /*white-space: pre-wrap;*/
 }
 
+.table__cell--date {
+  flex: 0 0 3em;
+  text-align: left;
+}
+
 .table__flex-break {
   display: block;
   flex: 0 0 100%;
@@ -377,8 +384,7 @@ h2 {
 }
 
 .table_cell--data-lecturer::before{
-  /*non-breaking space*/
-  content:"Előadó:\00a0";
+  content:"Előadó: ";
 }
 
 .table_cell--data-comment::before{
