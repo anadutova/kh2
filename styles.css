@@ -398,10 +398,6 @@ h2 {
   display: none;
 }
 
-.menu {
-  position: initial;
-  box-shadow: none;
-}
 .menu__items {
   /*display: none;*/
   flex-flow: column;
