@@ -403,15 +403,22 @@ h2 {
   box-shadow: none;
 }
 .menu__items {
-  display: none;
-  overflow: hidden;
-  -webkit-transition: max-height 0.5s ease-in-out;
-  transition: max-height 0.5s ease-in-out;
+  /*display: none;*/
+  flex-flow: column;
+  flex-wrap: nowrap;
 }
 
 .menu__item {
-  width: 100vw;
-  text-align: center;
+  box-sizing: border-box;
+  height: 46px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu__item--collapsed {
+  padding: 0;
+  height: 0px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu__bar {

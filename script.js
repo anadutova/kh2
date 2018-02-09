@@ -164,19 +164,25 @@ function initCollapsibleTable() {
     }
 }
 
+var menuCollapsed = true;
+
 function initMenuButtonClickEvent() {
     var button = document.querySelector(".js-menuButton");
     button.addEventListener("click", function (event) {
-        menu = document.querySelector(".menu__items");
-        menu.style.display = !menu.style.display || menu.style.display === 'none' ? 'flex' : 'none';
+        event.stopPropagation();
+        items = document.querySelectorAll(".menu__item");
+        items.forEach(
+            (item) => {
+            menuCollapsed = item.classList.toggle("menu__item--collapsed") ;
+            })
         console.log("Menu button clicked")
-    })
-
-    window.matchMedia("(min-width: 577px)").addListener(() => {
-        menu = document.querySelector(".menu__items");
-        menu.removeAttribute("style");
     });
 
+    document.addEventListener("click", function (event) {
+        if (!event.target.classList.contains("menu") && !menuCollapsed)
+        {event.stopPropagation();
+        document.querySelector(".js-menuButton").dispatchEvent(new Event("click"));}
+    });
 }
 
 function updateLastModified() {
