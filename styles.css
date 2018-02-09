@@ -392,12 +392,6 @@ h2 {
   white-space: pre-wrap;
 }
 
-
-
-#a, #b {
-  display: none;
-}
-
 .menu__items {
   /*display: none;*/
   flex-flow: column;
