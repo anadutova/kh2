@@ -406,9 +406,11 @@ h2 {
   /*display: none;*/
   flex-flow: column;
   flex-wrap: nowrap;
+  align-items: stretch;
 }
 
 .menu__item {
+  text-align: center;
   box-sizing: border-box;
   height: 46px;
   transition: all 0.3s ease-in-out;
