@@ -139,7 +139,7 @@ ready(onReady);
 function initSmoothScroll() {
     document.querySelectorAll(".menu__item").forEach((item) => {
         item.addEventListener("click", (e) => {
-            event.preventDefault();
+            e.preventDefault();
             document.querySelector("#" + e.target.dataset.anchor).scrollIntoView({
                 behavior: 'smooth',
                 block: 'start',
