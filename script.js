@@ -142,7 +142,7 @@ function initSmoothScroll() {
             e.preventDefault();
             document.querySelector("#" + e.target.dataset.anchor).scrollIntoView({
                 behavior: 'smooth',
-                block: 'start',
+                block: 'center',
                 inline: 'nearest'
             });
             console.log(e.target);

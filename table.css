@@ -1,0 +1,117 @@
+.table {
+  font-size: 0.8em;
+  width: 100%;
+}
+
+.table__cell {
+  padding: .5em;
+}
+
+.table__cell--filler {
+  visibility: hidden;
+}
+
+.table__cell--xs-only {
+  display: none;
+}
+
+.table__cell--no-wrap {
+  white-space: nowrap;
+}
+
+.table_cell--data-comment{
+  white-space: pre-wrap;
+}
+
+.table_cell--data-lecturer{
+  white-space: pre-wrap;
+}
+
+.table__flex-break {
+  display: none;
+}
+
+.table__header{
+  background-color: #e6e6e6;
+  font-weight: normal;
+}
+
+.table__header-cell{
+  font-weight: normal;
+    padding: 0 .8em;
+}
+
+.table__cell--text-align-center{
+	text-align: center;
+}
+
+.table__row:nth-child(even){
+  background-color: #fff;
+}
+
+.table__link{
+  color: #A82B31;
+}
+
+.table__cell--except-xs {
+  display: table-cell;
+}
+
+@media (max-width: 576px) {
+  .table, .table__header-wrapper, .table__header, .table__header-cell,
+  .table__body, .table__row, .table__cell--text-align-center,
+  .table__cell--flexible, .table__cell--inflexible {
+    box-sizing: border-box;
+  }
+
+  .table__header, .table__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .table__cell {
+  }
+
+  .table__cell--inflexible {
+    flex: 0 0;
+    padding: 0 .3em;
+  }
+
+  .table__cell--flexible {
+    flex: 1 2 51%;
+    text-align: left;
+    /*white-space: pre-wrap;*/
+  }
+
+  .table__cell--date {
+    flex: 0 0 3em;
+    text-align: left;
+  }
+
+  .table__flex-break {
+    display: block;
+    flex: 0 0 100%;
+    padding:0;
+  }
+
+  .table_cell--data-lecturer::before{
+    content:"Előadó: ";
+  }
+
+  .table_cell--data-comment::before{
+    content:"Megjegyzés:\A";
+    white-space: pre-wrap;
+  }
+
+  .table__cell--except-xs {
+    display:none;
+  }
+
+  .table__cell--xs-only {
+    display: block;
+  }
+
+  .table__cell--filler {
+    display: none;
+  }
+}
