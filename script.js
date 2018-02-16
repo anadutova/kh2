@@ -72,9 +72,9 @@ function initTable() {
         for (let i = 0; i < 5; i++) {
             let cell = document.createElement("td");
             if (i == 2) cell.setAttribute("class", "table__cell--text-align-center  table__cell--inflexible");
-            else if (i == 0) cell.setAttribute("class", "table__cell--date");
+            else if (i == 0) cell.setAttribute("class", "table__cell--small");
             else cell.setAttribute("class", "table__cell--flexible");
-            if (i == 3) cell.classList.add("table_cell--data-lecturer", "js-collapsibleCell", "table__cell--text-align-center", "table__cell--except-xs");
+            if (i == 3) cell.classList.add("table_cell--data-lecturer", "table__cell--small", "js-collapsibleCell", "table__cell--text-align-center", "table__cell--except-xs");
             if (i == 4) cell.classList.add("table_cell--data-comment", "js-collapsibleCell", "table__cell--except-xs");
             cell.classList.add("table__cell");
             let cellText;

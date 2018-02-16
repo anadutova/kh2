@@ -22,7 +22,7 @@
 }
 
 .card__body {
-  padding: 0 3em 1em;
+  padding: 1em 3em 1em;
   font-size: 1em;
   background-color: #f2f2f2;
   overflow: auto;
@@ -58,6 +58,6 @@
 	}
 
 	.card__body {
-		padding: 0 1em 1em;
+		padding: 1em 1em;
 	}
 }

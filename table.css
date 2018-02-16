@@ -64,26 +64,27 @@
     box-sizing: border-box;
   }
 
-  .table__header, .table__row {
+  .table__row {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .table__cell {
+  .table__header {
+    display: none;
   }
 
   .table__cell--inflexible {
     flex: 0 0;
-    padding: 0 .3em;
+    padding: .3em .3em;
   }
 
   .table__cell--flexible {
-    flex: 1 2 51%;
+    flex: 1 1;
     text-align: left;
     /*white-space: pre-wrap;*/
   }
 
-  .table__cell--date {
+  .table__cell--small {
     flex: 0 0 3em;
     text-align: left;
   }
