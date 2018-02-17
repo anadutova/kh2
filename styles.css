@@ -37,6 +37,8 @@ p {
 
 ul {
   padding-left: 1.2em;
+  margin-top: 0;
+  margin-bottom: .5em;
 }
 
 .chevron-right {
@@ -63,6 +65,11 @@ h2 {
   font-size: 1.8em;
   font-weight: normal;
   margin: 0 2em;
+}
+
+.paragraph--sidenote {
+  font-size: .75em;
+  color: #333;
 }
 
 .paragraph--emphasised {
@@ -145,7 +152,7 @@ h2 {
 		font-size: 1.2em;
 		margin: 0 0;
   }
-  
+
  .footer {
     font-size: 0.8em;
     background-color: #545454;

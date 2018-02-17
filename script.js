@@ -11,24 +11,18 @@ function initTable() {
 
     lectures.push(
         {
-            date: '02.07',
+            date: '02.06',
             topic: 'Bemutatkozás, játékszabályok',
-            address: 'kh2-01_bevezeto.pdf',
+            address: 'http://w3.tmit.bme.hu/kh2/kh2-01_bevezeto.pdf',
             lecturer: 'NK',
-            comment: '<a href="kh2-01_bevezeto-animacio-nelkul.pdf" class="link">Animációk nélküli változat</a>'
+            comment: ''
         },
         {
             date: "02.13",
-            topic: "Technikatörténeti áttekintés",
-            address: "kh2-02_tortenelem_vezetekes_arch.pdf",
-            lecturer: null,
-            comment: "Nem vizsgaanyag"
-        },
-        {
-            date: "02.20–02.19",
-            topic: "Analóg és digitális beszédátvitel",
-            address: "kh2-03_PCM.pdf",
-            lecturer: "NK"
+            topic: "Mobiltelefon-hálózatok: áttekintés, 1G, 2G (GSM)",
+            address: "http://w3.tmit.bme.hu/kh2/kh2-02_mobil_1g_2g.pdf",
+            lecturer: 'NK',
+            comment: ''
         }
     );
 

@@ -1,6 +1,7 @@
 .table {
   font-size: 0.8em;
   width: 100%;
+  margin: 1em auto;
 }
 
 .table__cell {
@@ -70,6 +71,13 @@
   }
 
   .table__header {
+    display: block;
+    height: 1em;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+
+  .table__header-cell {
     display: none;
   }
 
@@ -93,6 +101,10 @@
     display: block;
     flex: 0 0 100%;
     padding:0;
+  }
+
+  .table_cell--data-lecturer {
+    margin-left: 2em;
   }
 
   .table_cell--data-lecturer::before{
