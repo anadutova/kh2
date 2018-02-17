@@ -41,15 +41,24 @@
 }
 
 .card__button--color-red{
-  background-color: #A82B31;
+  background: #a82b31;
+  background: -moz-linear-gradient(-45deg, #a82b31 0%, #c93434 100%);
+  background: -webkit-linear-gradient(-45deg, #a82b31 0%,#c93434 100%);
+  background: linear-gradient(135deg, #a82b31 0%,#c93434 100%);
 }
 
 .card__button--color-green{
-  background-color: #468061;
+  background: #468061;
+  background: -moz-linear-gradient(-45deg, #468061 0%, #66a061 100%);
+  background: -webkit-linear-gradient(-45deg, #468061 0%,#66a061 100%);
+  background: linear-gradient(135deg, #468061 0%,#66a061 100%);
 }
 
 .card__button--color-blue{
-  background-color: #466180;
+  background: #466180;
+  background: -moz-linear-gradient(-45deg, #466180 0%, #466180 100%);
+  background: -webkit-linear-gradient(-45deg, #466180 0%,#466180 100%);
+  background: linear-gradient(135deg, #466180 0%,#567195 100%);
 }
 
 @media (max-width: 767px) {
