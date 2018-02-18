@@ -66,6 +66,7 @@
     box-sizing: border-box;
     height: 46px;
     transition: all 0.3s ease-in-out;
+    background: none;
   }
 
   .menu__item--collapsed {
@@ -80,6 +81,11 @@
     padding: .4em;
     font-size: 1.2em;
     color: #fff;
-    background-color: #A82B31;
+  }
+
+  .menu {
+    background: -moz-linear-gradient(-45deg, #a82b31 0%, #c93434 100%);
+    background: -webkit-linear-gradient(-45deg, #a82b31 0%,#c93434 100%);
+    background: linear-gradient(135deg, #a82b31 0%,#c93434 100%);
   }
 }
