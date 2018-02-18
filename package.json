@@ -1,0 +1,28 @@
+{
+  "name": "kh2",
+  "version": "1.0.0",
+  "description": "Kommunikációs hálózatok 2 tárgyhonlap",
+  "main": "script.js",
+  "dependencies": {
+    "gulp-svgstore": "^6.1.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anadutova/kh2.git"
+  },
+  "keywords": [
+    "kh2"
+  ],
+  "author": "Anastasia Dutova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anadutova/kh2/issues"
+  },
+  "homepage": "https://github.com/anadutova/kh2#readme"
+}
