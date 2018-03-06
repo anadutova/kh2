@@ -28,7 +28,7 @@ function initTable() {
 
     var table = document.getElementById("table-body");
 
-    for (var lecture of lectures) {
+    lectures.forEach(function(lecture) {
         var row = document.createElement("tr");
         row.setAttribute("class", "table__row");
 
@@ -39,7 +39,7 @@ function initTable() {
         button.setAttribute("role", "switch");
 
         var svg = document.createElementNS('http://www.w3.org/2000/svg', "svg");
-        svg.classList.add("expand-icon");
+        svg.setAttribute("class", "expand-icon");
 
         var use = document.createElementNS('http://www.w3.org/2000/svg', "use");
         use.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_add_white_24px");
@@ -54,11 +54,11 @@ function initTable() {
             var button = event.target;
             var row = button.parentElement.parentElement;
             var cells = row.querySelectorAll(".js-collapsibleCell");
-            for (cell of cells) {
+            cells.forEach(function (cell) {
                 if (!cell.classList.toggle("table__cell--except-xs"))
                     button.firstChild.firstChild.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_remove_white_24px");
                 else button.firstChild.firstChild.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_add_white_24px");
-            }
+            });
 
         })
         row.appendChild(cell);
@@ -91,7 +91,7 @@ function initTable() {
                     a.setAttribute("href", lecture.address)
 
                     var svg = document.createElementNS('http://www.w3.org/2000/svg', "svg");
-                    svg.classList.add("download-icon");
+                    svg.setAttribute("class", "download-icon");
 
                     var use = document.createElementNS('http://www.w3.org/2000/svg', "use");
                     use.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_file_download_white_24px");
@@ -118,7 +118,7 @@ function initTable() {
         }
 
         table.appendChild(row);
-    }
+    })
 }
 
 function onReady() {
@@ -131,8 +131,8 @@ function onReady() {
 ready(onReady);
 
 function initSmoothScroll() {
-    document.querySelectorAll(".menu__item").forEach((item) => {
-        item.addEventListener("click", (e) => {
+    document.querySelectorAll(".menu__item").forEach(function(item) {
+        item.addEventListener("click", function(e) {
             e.preventDefault();
             document.querySelector("#" + e.target.dataset.anchor).scrollIntoView({
                 behavior: 'smooth',
@@ -151,10 +151,10 @@ function initCollapsibleTable() {
         var rows = document.querySelectorAll("tbody > tr");
         var cell = document.createElement("td");
         cell.textContent = "\u25b6";
-        for (row of rows) {
+        rows.forEach(function(row) {
             row.insertBefore(cell.cloneNode(true), row.firstChild);
             console.log("row");
-        }
+        })
     }
 }
 
@@ -166,7 +166,7 @@ function initMenuButtonClickEvent() {
         event.stopPropagation();
         items = document.querySelectorAll(".menu__item");
         items.forEach(
-            (item) => {
+            function(item) {
             menuCollapsed = item.classList.toggle("menu__item--collapsed") ;
             })
         console.log("Menu button clicked")
@@ -182,11 +182,12 @@ function initMenuButtonClickEvent() {
 function updateLastModified() {
 
     var req = new XMLHttpRequest();
-    req.responseType = "document";
     req.onload = function () {
         var time = document.querySelector("#js-lastModified");
         time.textContent = this.getResponseHeader("Last-Modified");
     };
     req.open('HEAD', 'script.js');
+    req.responseType = "document";
     req.send();
+
 }
