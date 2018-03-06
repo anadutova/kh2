@@ -7,6 +7,7 @@
   margin: 0 auto 32px;
   max-width: 50em;
   box-shadow: 0 6px 6px rgba(80, 20, 20, .1);
+  border-radius: 6px;
 }
 
 .card__header {
@@ -26,8 +27,6 @@
   font-size: 1em;
   background-color: #f2f2f2;
   overflow: auto;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
 }
 
 .card__button {
