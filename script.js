@@ -45,11 +45,11 @@ function initTable() {
         use.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_add_white_24px");
 
         svg.appendChild(use);
-        button.appendChild(svg);
+        //button.appendChild(svg);
         cell.appendChild(button);
 
 
-        cell.classList.add("table__cell--text-align-center", "table__cell--xs-only", "table__cell--inflexible", "table__cell");
+        cell.setAttribute("class", "table__cell--text-align-center table__cell--xs-only table__cell--inflexible table__cell");
         button.addEventListener("click", function (event) {
             var button = event.target;
             var row = button.parentElement.parentElement;
@@ -65,11 +65,11 @@ function initTable() {
 
         for (let i = 0; i < 5; i++) {
             let cell = document.createElement("td");
-            if (i == 2) cell.setAttribute("class", "table__cell--text-align-center  table__cell--inflexible");
+            if (i == 2) cell.setAttribute("class", "table__cell--text-align-center table__cell--inflexible");
             else if (i == 0) cell.setAttribute("class", "table__cell--small");
             else cell.setAttribute("class", "table__cell--flexible");
-            if (i == 3) cell.classList.add("table_cell--data-lecturer", "table__cell--small", "js-collapsibleCell", "table__cell--text-align-center", "table__cell--except-xs");
-            if (i == 4) cell.classList.add("table_cell--data-comment", "js-collapsibleCell", "table__cell--except-xs");
+            if (i == 3) cell.setAttribute("class", "table_cell--data-lecturer table__cell--small js-collapsibleCell table__cell--text-align-center table__cell--except-xs");
+            if (i == 4) cell.setAttribute("class", "table_cell--data-comment js-collapsibleCell table__cell--except-xs");
             cell.classList.add("table__cell");
             let cellText;
             switch (i) {
@@ -126,12 +126,15 @@ function onReady() {
     initMenuButtonClickEvent();
     updateLastModified();
     initSmoothScroll();
+    svg4everybody();
 }
 
 ready(onReady);
 
 function initSmoothScroll() {
-    document.querySelectorAll(".menu__item").forEach(function(item) {
+    var nodeList = document.querySelectorAll(".menu__item");
+    for (var i = 0; i < nodeList.length; i++){
+    var item = nodeList.item(i);
         item.addEventListener("click", function(e) {
             e.preventDefault();
             document.querySelector("#" + e.target.dataset.anchor).scrollIntoView({
@@ -141,7 +144,7 @@ function initSmoothScroll() {
             });
             console.log(e.target);
         });
-    });
+}
 }
 
 function initCollapsibleTable() {
@@ -184,7 +187,10 @@ function updateLastModified() {
     var req = new XMLHttpRequest();
     req.onload = function () {
         var time = document.querySelector("#js-lastModified");
-        time.textContent = this.getResponseHeader("Last-Modified");
+        var htmlTime = new Date(document.lastModified);
+        var jsTime = new Date(this.getResponseHeader("Last-Modified"));
+        time.textContent = jsTime > htmlTime ? jsTime : htmlTime;
+        //time.textContent = document.lastModified;
     };
     req.open('HEAD', 'script.js');
     req.responseType = "document";
