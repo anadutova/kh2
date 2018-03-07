@@ -156,7 +156,6 @@ function initCollapsibleTable() {
         for(var i = 0; i < row.length; i++) {
           var row = row[i];
           row.insertBefore(cell.cloneNode(true), row.firstChild);
-          console.log("row");
         }
     }
 }
@@ -171,7 +170,6 @@ function initMenuButtonClickEvent() {
         for(var i = 0; i < items.length; i++) {
           menuCollapsed = items[i].classList.toggle("menu__item--collapsed") ;
         }
-        console.log("Menu button clicked")
     });
 
     document.addEventListener("click", function (event) {
