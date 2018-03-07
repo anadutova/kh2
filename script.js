@@ -29,7 +29,6 @@ function initTable() {
     var table = document.getElementById("table-body");
     for(var lectureIndex = 0; lectureIndex < 2; lectureIndex++) {
       var lecture = lectures[lectureIndex];
-      console.log(lectures);
       var row = document.createElement("tr");
       row.setAttribute("class", "table__row");
 
