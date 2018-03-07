@@ -56,8 +56,9 @@ function initTable() {
           var cells = row.querySelectorAll(".js-collapsibleCell");
           for(var i = 0; i < cells.length; i++) {
             var cell = cells[i];
-            if (!cell.classList.toggle("table__cell--except-xs"))
+            if (!cell.classList.toggle("table__cell--except-xs")) {
                 button.firstChild.firstChild.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_remove_white_24px");
+            }
             else button.firstChild.firstChild.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_add_white_24px");
           }
       })
