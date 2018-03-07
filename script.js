@@ -32,7 +32,7 @@ function initTable() {
       var row = document.createElement("tr");
       row.setAttribute("class", "table__row");
 
-      let cell = document.createElement("td");
+      var cell = document.createElement("td");
 
       var button = document.createElement("button");
       button.classList.add("expand-button");
@@ -63,15 +63,15 @@ function initTable() {
       })
       row.appendChild(cell);
 
-      for (let i = 0; i < 5; i++) {
-          let cell = document.createElement("td");
+      for (var i = 0; i < 5; i++) {
+          var cell = document.createElement("td");
           if (i == 2) cell.setAttribute("class", "table__cell--text-align-center table__cell--inflexible");
           else if (i == 0) cell.setAttribute("class", "table__cell--small");
           else cell.setAttribute("class", "table__cell--flexible");
           if (i == 3) cell.setAttribute("class", "table_cell--data-lecturer table__cell--small js-collapsibleCell table__cell--text-align-center table__cell--except-xs");
           if (i == 4) cell.setAttribute("class", "table_cell--data-comment js-collapsibleCell table__cell--except-xs");
           cell.classList.add("table__cell");
-          let cellText;
+          var cellText;
           switch (i) {
               case 0: cellText = document.createTextNode(lecture.date);
                   break;
@@ -111,7 +111,7 @@ function initTable() {
           row.appendChild(cell);
 
           if (i == 2) {
-              let flexBreak = document.createElement("td");
+              var flexBreak = document.createElement("td");
               flexBreak.classList.add("table__flex-break");
               row.appendChild(flexBreak);
           }
