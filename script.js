@@ -45,7 +45,7 @@ function initTable() {
         use.setAttributeNS('http://www.w3.org/1999/xlink', "href", "icons.svg#ic_add_white_24px");
 
         svg.appendChild(use);
-        //button.appendChild(svg);
+        button.appendChild(svg);
         cell.appendChild(button);
 
 
@@ -190,7 +190,6 @@ function updateLastModified() {
         var htmlTime = new Date(document.lastModified);
         var jsTime = new Date(this.getResponseHeader("Last-Modified"));
         time.textContent = jsTime > htmlTime ? jsTime : htmlTime;
-        //time.textContent = document.lastModified;
     };
     req.open('HEAD', 'script.js');
     req.responseType = "document";
