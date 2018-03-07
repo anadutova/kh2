@@ -132,19 +132,18 @@ function onReady() {
 ready(onReady);
 
 function initSmoothScroll() {
-    var nodeList = document.querySelectorAll(".menu__item");
-    for (var i = 0; i < nodeList.length; i++){
-    var item = nodeList.item(i);
-        item.addEventListener("click", function(e) {
+    document.querySelectorAll(".menu__item").forEach((item) => {
+        item.addEventListener("click", (e) => {
             e.preventDefault();
-            document.querySelector("#" + e.target.dataset.anchor).scrollIntoView({
-                behavior: 'smooth',
-                block: 'center',
-                inline: 'nearest'
+            var elementY = document.querySelector("#" + e.target.dataset.anchor).getBoundingClientRect().top;
+            var bodyY = document.querySelector("body").getBoundingClientRect().top;
+            window.scroll({
+                top: elementY - bodyY - 70,
+                left: 0,
+                behavior: 'smooth'
             });
-            console.log(e.target);
         });
-}
+    });
 }
 
 function initCollapsibleTable() {
