@@ -132,8 +132,9 @@ function onReady() {
 ready(onReady);
 
 function initSmoothScroll() {
-    document.querySelectorAll(".menu__item").forEach((item) => {
-        item.addEventListener("click", (e) => {
+    var menuitems = document.querySelectorAll(".menu__item");
+    for(var i = 0; i < menuitems.length; i++) {
+        menuitems[i].addEventListener("click", function menuclick(e) {
             e.preventDefault();
             var elementY = document.querySelector("#" + e.target.dataset.anchor).getBoundingClientRect().top;
             var bodyY = document.querySelector("body").getBoundingClientRect().top;
@@ -143,7 +144,7 @@ function initSmoothScroll() {
                 behavior: 'smooth'
             });
         });
-    });
+    }
 }
 
 function initCollapsibleTable() {
